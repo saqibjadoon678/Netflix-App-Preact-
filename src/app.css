@@ -1,0 +1,138 @@
+/* Apply box-sizing to all elements */
+* {
+  box-sizing: border-box; /* Include padding and borders in the element's total width and height */
+}
+
+/* General body styles */
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  overflow-x: hidden; /* Hide any horizontal overflow */
+  font-family: Arial, sans-serif; /* Set a clean font */
+}
+
+/* Basic styling for the app */
+.app {
+  text-align: center;
+  background-color: #f0f0f0; /* Light background for the app */
+  color: #333; /* Dark text color for contrast */
+  min-height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+/* Title styling */
+h1 {
+  margin-bottom: 40px; /* Space below title */
+  font-size: 4rem; /* Increased font size for title */
+  color: #fff; /* White text color */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Stronger text shadow for depth */
+  background: linear-gradient(90deg, #e50914, #641c23); /* Gradient background */
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Make text color transparent to show gradient */
+  padding: 20px 40px; /* Increased padding around title */
+  border-radius: 10px; /* Rounded corners for title background */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for the title to create depth */
+}
+
+
+/* Container for the cards using CSS Grid */
+.card-container {
+  display: grid; /* Use grid layout for cards */
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 30px; /* Space between cards */
+  padding: 20px; /* Padding for the container */
+  width: 100%; /* Full width of the viewport */
+  height: 100%; /* Fill available height */
+}
+
+/* Styling each card */
+.card {
+  background-color: #fff; /* Card background color */
+  border-radius: 10px; /* Rounded corners for cards */
+  overflow: hidden; /* Hide overflow for rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scale and shadow transitions */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  display: flex; /* Use flexbox for content alignment */
+  flex-direction: column; /* Stack content vertically */
+  height: 100%; /* Full height of the card container */
+}
+
+/* Card image styles */
+.card img {
+  width: 100%; /* Make images responsive */
+  height: 200px; /* Fixed height for equal card image sizes */
+  object-fit: cover; /* Maintain aspect ratio and cover */
+  transition: transform 0.3s ease; /* Smooth image transition */
+}
+
+/* Info container within the card */
+.card-info {
+  padding: 15px; /* Padding inside card */
+  text-align: left; /* Align text to the left */
+  flex-grow: 1; /* Allow this area to grow */
+}
+
+/* Title styling inside card */
+.card h3 {
+  margin: 10px 0; /* Space above and below card title */
+  font-size: 1.5rem; /* Font size for card title */
+}
+
+/* Styling for rating text */
+.card p {
+  font-size: 1rem; /* Font size for rating */
+  margin-bottom: 10px; /* Space below rating */
+  color: #666; /* Slightly lighter color for ratings */
+}
+
+/* Watch Now button styling */
+.watch-btn {
+  background-color: #e50914; /* Button background color */
+  color: white; /* Button text color */
+  padding: 10px 20px; /* Button padding */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners for button */
+  font-size: 1rem; /* Font size for button */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth background color change and scale on hover */
+}
+
+.watch-btn:hover {
+  background-color: #f40612; /* Darker red on hover */
+  transform: scale(1.05); /* Scale up button on hover */
+}
+
+/* New class for clicked state */
+.watch-btn.clicked {
+  background-color: #f0f0f0; /* Light background color when clicked */
+  color: #333; /* Darker text color for contrast */
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: scale(1.05); /* Slightly scale up on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Card image hover effect */
+.card img:hover {
+  transform: scale(1.1); /* Slightly zoom in on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(1, 1fr); /* 1 card per row for small screens */
+  }
+}
